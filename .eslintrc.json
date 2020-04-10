@@ -1,0 +1,50 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "destructuring": true,
+      "spread": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    // enable additional rules
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+
+    // override default options for rules from base configurations
+    "no-cond-assign": ["error", "always"],
+
+    // my eslint config
+    "block-spacing": ["error", "always"],
+    "no-trailing-spaces": ["error", { "ignoreComments": true, "skipBlankLines": true }],
+    "no-whitespace-before-property": "error",
+    "space-before-blocks": ["error", { "functions": "always", "keywords": "always", "classes": "always" }],
+    "semi-spacing":["error", {"before": false, "after": true}],
+    "object-curly-spacing": ["error", "always"],
+    "array-bracket-spacing": ["error", "never", {"objectsInArrays": false}],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "space-before-function-paren": ["error", {
+        "anonymous": "always",
+        "named": "always",
+        "asyncArrow": "always"
+    }],
+    "no-extra-parens": ["error", "all", { "ignoreJSX": "multi-line" }],
+    "space-in-parens": ["error", "never"],
+    "arrow-parens": ["error", "as-needed" , { "requireForBlockBody": true }],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "computed-property-spacing": ["error", "never"],
+    "no-duplicate-imports": "error",
+    "no-const-assign": "error",
+    "no-var": "error",
+    "prefer-const": ["error", {"destructuring": "all"}],
+    "prefer-destructuring": ["warn", { "array": false, "object": true}],
+    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }]
+  }
+}
