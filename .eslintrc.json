@@ -13,7 +13,22 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     // enable additional rules
-    "indent": ["error", 2],
+    "indent": ["error", 2, {
+      "VariableDeclarator": 2,
+      "SwitchCase": 1,
+      "MemberExpression": 1,
+      "FunctionDeclaration": {
+        "body": 1, 
+        "parameters": 1
+      },
+      "CallExpression": {"arguments": "first"},
+      "ArrayExpression": "first",
+      "ObjectExpression": "first",
+      "ImportDeclaration": 1,
+      "flatTernaryExpressions": false,
+      "ignoredNodes": ["CallExpression > FunctionExpression.callee > BlockStatement.body"],
+      "ignoreComments": true
+    }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
