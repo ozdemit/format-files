@@ -9,26 +9,32 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "plugins": ["react-hooks"],
+  "plugins": ["react-hooks", "prettier", "eslint-plugin-react"],
   "rules": {
+    "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
-    // enable additional rules
-    "indent": ["error", 2, {
-      "VariableDeclarator": 2,
-      "SwitchCase": 1,
-      "MemberExpression": 1,
-      "FunctionDeclaration": {
-        "body": 1, 
-        "parameters": 1
-      },
-      "CallExpression": {"arguments": "first"},
-      "ArrayExpression": "first",
-      "ObjectExpression": "first",
-      "ImportDeclaration": 1,
-      "flatTernaryExpressions": false,
-      "ignoredNodes": ["CallExpression > FunctionExpression.callee > BlockStatement.body"],
-      "ignoreComments": true
-    }],
+    "indent": [
+      "error",
+      2,
+      {
+        "VariableDeclarator": 2,
+        "SwitchCase": 1,
+        "MemberExpression": 1,
+        "FunctionDeclaration": {
+          "body": 1,
+          "parameters": 1
+        },
+        "CallExpression": { "arguments": "first" },
+        "ArrayExpression": "first",
+        "ObjectExpression": "first",
+        "ImportDeclaration": 1,
+        "flatTernaryExpressions": false,
+        "ignoredNodes": [
+          "CallExpression > FunctionExpression.callee > BlockStatement.body"
+        ],
+        "ignoreComments": true
+      }
+    ],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
@@ -38,28 +44,55 @@
 
     // my eslint config
     "block-spacing": ["error", "always"],
-    "no-trailing-spaces": ["error", { "ignoreComments": true, "skipBlankLines": true }],
+    "no-trailing-spaces": [
+      "error",
+      { "ignoreComments": true, "skipBlankLines": true }
+    ],
     "no-whitespace-before-property": "error",
-    "space-before-blocks": ["error", { "functions": "always", "keywords": "always", "classes": "always" }],
-    "semi-spacing":["error", {"before": false, "after": true}],
+    "space-before-blocks": [
+      "error",
+      { "functions": "always", "keywords": "always", "classes": "always" }
+    ],
+    "semi-spacing": ["error", { "before": false, "after": true }],
     "object-curly-spacing": ["error", "always"],
-    "array-bracket-spacing": ["error", "never", {"objectsInArrays": false}],
+    "array-bracket-spacing": ["error", "never", { "objectsInArrays": false }],
     "comma-spacing": ["error", { "before": false, "after": true }],
-    "space-before-function-paren": ["error", {
+    "space-before-function-paren": [
+      "error",
+      {
         "anonymous": "always",
         "named": "always",
         "asyncArrow": "always"
-    }],
+      }
+    ],
     "no-extra-parens": ["error", "all", { "ignoreJSX": "multi-line" }],
     "space-in-parens": ["error", "never"],
-    "arrow-parens": ["error", "as-needed" , { "requireForBlockBody": true }],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "computed-property-spacing": ["error", "never"],
     "no-duplicate-imports": "error",
     "no-const-assign": "error",
     "no-var": "error",
-    "prefer-const": ["error", {"destructuring": "all"}],
-    "prefer-destructuring": ["warn", { "array": false, "object": true}],
-    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }]
+    "prefer-const": ["error", { "destructuring": "all" }],
+    "prefer-destructuring": ["warn", { "array": false, "object": true }],
+    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
+    "react/jsx-closing-bracket-location": [
+      1,
+      { "selfClosing": "after-props", "nonEmpty": "tag-aligned" }
+    ],
+    "react/jsx-tag-spacing": {
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never",
+      "beforeClosing": "allow"
+    },
+    "react/jsx-boolean-value": "never",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ]
   }
 }
